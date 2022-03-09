@@ -2,7 +2,10 @@
 From tomcat:latest
 
 # Maintainer
-MAINTAINER "AR Shankar" 
+MAINTAINER "DevOps By MK" 
+
+# Copy webapps files into webapps directory
+RUN cp -R  /usr/local/tomcat/webapps.dist/*  /usr/local/tomcat/webapps
 
 # copy war file on to container 
-COPY ./webapp.war /usr/local/tomcat/webapps
+COPY ./webapp/target/webapp.war /usr/local/tomcat/webapps
